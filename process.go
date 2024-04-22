@@ -54,7 +54,7 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"-fflags",
 		"nobuffer",
 		"-rtsp_transport",
-		"tcp",
+		"udp",
 		"-i",
 		URI,
 		"-f",
