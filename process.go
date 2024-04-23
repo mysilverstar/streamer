@@ -87,8 +87,8 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		fmt.Sprintf("%s/%%d.ts", path),
 		// "-preset",
 		// "ultrafast",
-		"-tune",
-		"fastdecode",
+		// "-tune",
+		// "fastdecode",
 		fmt.Sprintf("%s/index.m3u8", path),
 		// "-report",
 	)
