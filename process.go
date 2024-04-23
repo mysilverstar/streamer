@@ -65,7 +65,7 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"0",
 		"-copyts",
 		"-vcodec",
-		"copy",
+		"libx264",
 		"-movflags",
 		"frag_keyframe+empty_moov",
 	}
@@ -85,8 +85,12 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"3",
 		"-hls_segment_filename",
 		fmt.Sprintf("%s/%%d.ts", path),
+		"-preset",
+		"ultrafast",
+		"-tune",
+		"fastdecode",
 		fmt.Sprintf("%s/index.m3u8", path),
-		"-report",
+		// "-report",
 	)
 	cmd := exec.Command("ffmpeg", processCommands...)
 	return cmd
