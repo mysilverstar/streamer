@@ -65,7 +65,7 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"0",
 		"-copyts",
 		"-vcodec",
-		"libx264",
+		"copy",
 		"-movflags",
 		"frag_keyframe+empty_moov",
 	}
@@ -85,10 +85,10 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"3",
 		"-hls_segment_filename",
 		fmt.Sprintf("%s/%%d.ts", path),
-		"-preset",
-		"ultrafast",
-		// "-tune",
-		// "fastdecode",
+		// "-preset",
+		// "ultrafast",
+		"-tune",
+		"fastdecode",
 		fmt.Sprintf("%s/index.m3u8", path),
 		// "-report",
 	)
