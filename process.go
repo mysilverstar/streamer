@@ -81,6 +81,8 @@ func (p Process) Spawn(path, URI string) *exec.Cmd {
 		"live",
 		"-hls_time",
 		"1",
+		"-report",
+		"file=test.log:level=16"
 		"-hls_list_size",
 		"3",
 		"-hls_segment_filename",
